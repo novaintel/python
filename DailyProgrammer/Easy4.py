@@ -3,17 +3,24 @@ from random import *
 def generateCharacter():
     asciiInt = randint(33,122)
     asciiChar = chr(asciiInt)
-    print("I gen this char: " + asciiChar)
     return asciiChar
 
 def genPassword(length):
     password = ""
-    for i in range(length):
+    for j in range(length):
         password += generateCharacter()
     return password
 
+def writeToFile(text):
+    f = open("Passwords.txt", "a")
+    f.write(text)
+    f.write("\n")
+    f.close
+
+print("How many passwords do you wish to generate?")
+numPasswords = int(input())
 print("Please enter the length of the password you want")
-length = input()
+length = int(input())
 #This is super risky but I trust myself
-genPassword = genPassword(int(length))
-print("The password we have generated is: " + genPassword)
+for i in range(numPasswords):
+    writeToFile(genPassword(length))
