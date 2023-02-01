@@ -19,7 +19,7 @@ def findPi():
     constantMulti = (pow(2,(3/2)))/9801
 
     while True:
-        sumForN = constantMulti * (findFactorial(4 * count)) / (pow(findFactorial(count),4)) * ((26390 * count) + 1103) / (pow(396,(4*count)))
+        sumForN = constantMulti * (((findFactorial(4 * count)) / (pow(findFactorial(count),4))) * (((26390 * count) + 1103) / (pow(396,(4*count)))))
         totalSum += Decimal(sumForN)
 
         if(abs(sumForN) < 1e-30):
